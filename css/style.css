@@ -200,6 +200,8 @@ footer {
     align-items: center; }
     footer .ocultar-mobile {
       display: flex; }
+    footer .lista-contacto {
+      align-items: start; }
     footer .parrafo {
       margin-bottom: 1rem; } }
 
