@@ -1,0 +1,46 @@
+//mixin con parametros
+@mixin width-height ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin estilos-fuente ($font-size, $color) {
+    font-size: $font-size;
+    color: $color; 
+}
+
+@mixin grid ($grid-template-columns, $grid-template-rows) {
+    display: grid;
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+}
+
+@mixin flex-container($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+//mixin sin parametros
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin margin-mobile {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+@mixin margin-tablet {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+@mixin margin-desktop {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}

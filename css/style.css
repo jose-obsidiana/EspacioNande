@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+@font-face {
+  font-family: dreaming;
+  src: url(../../fonts/dreaming-outloud-regular.otf); }
+
+@font-face {
+  font-family: candara;
+  src: url(../../fonts/candara.ttf); }
+
+@font-face {
+  font-family: candarabold;
+  src: url(../../fonts/candara-bold.ttf); }
+
+body {
+  background-color: #f7f0e6;
+  color: #3C3D3C;
+  font-family: candara; }
+
+img {
+  max-width: 100%; }
+
+ul {
+  list-style-type: none;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  font-family: dreaming;
+  color: #3C3D3C; }
+
+p {
+  font-size: 1.5rem;
+  text-shadow: 0 0 0px #9a9a9a; }
+
+span {
+  font-size: 1.4rem;
+  font-weight: bold; }
+
+.img-border {
+  border: 2px solid #9a9a9a; }
+
+.box-shadow {
+  box-shadow: 0 0 5px 0 #9a9a9a; }
+
+.border-radius {
+  border-radius: 5px; }
+
+main h1 {
+  font-family: Dreaming;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  text-shadow: 1px 1px 1px #9a9a9a; }
+
+main h2 {
+  font-family: candarabold;
+  font-size: 1.7rem; }
+
+main h3 {
+  font-family: candarabold;
+  font-size: 1.5rem; }
+
+header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+  border-bottom: 1px solid #9a9a9a;
+  box-shadow: 0px 0px 4px 1px #9a9a9a;
+  background-color: #f7f0e6; }
+  header .titulo-header {
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 1px 1px 0px #9a9a9a; }
+  header .lista-header {
+    display: flex;
+    flex-direction: row;
+    font-size: 4rem;
+    justify-content: center;
+    gap: 6rem;
+    margin: 0;
+    text-shadow: 0px 1px 1px #9a9a9a;
+    text-transform: uppercase; }
+
+/* menu boot */
+.container-boot {
+  margin-bottom: 12rem;
+  font-family: Dreaming; }
+  .container-boot nav {
+    padding: 0; }
+    .container-boot nav .estilos-boot {
+      border-bottom: #9a9a9a solid 0.5px;
+      box-shadow: 0px 0px 6px 1px #9a9a9a;
+      background-color: #f7f0e6;
+      padding: 1rem 2rem 1rem 25%; }
+      .container-boot nav .estilos-boot .bg-boot {
+        background-image: url(../../img/fondoflores1.jpg);
+        opacity: 20px; }
+      .container-boot nav .estilos-boot .titulo-nande {
+        font-size: 2.5rem;
+        color: #3C3D3C;
+        text-shadow: 1px 1px 0px #9a9a9a; }
+      .container-boot nav .estilos-boot .btn-boot {
+        border: none;
+        padding: 0; }
+      .container-boot nav .estilos-boot div .color-boot {
+        color: #3C3D3C;
+        font-size: 2.3rem;
+        font-weight: bold; }
+
+@media screen and (min-width: 324px) {
+  header {
+    display: none; }
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem; } }
+
+@media screen and (min-width: 768px) {
+  main {
+    margin-left: 10rem;
+    margin-right: 10rem; } }
+
+@media screen and (min-width: 1024px) {
+  header {
+    display: flex; }
+  .container-boot {
+    display: none; } }
+
+footer {
+  background-color: #3C3D3C;
+  position: relative;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 18vh;
+  color: #f7f0e6;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  footer .lista-contacto, footer .lista-redes {
+    font-size: 4rem;
+    font-weight: bold; }
+    footer .lista-contacto .img-contacto, footer .lista-redes .img-contacto {
+      width: 10%; }
+  footer .container-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    footer .container-icons .nande-icons {
+      width: 25%;
+      border-radius: 50%;
+      box-shadow: 0 0 20px 0 #141414;
+      margin-bottom: 1rem; }
+    footer .container-icons .p-derechos {
+      margin: 0; }
+  footer .lista-redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    footer .lista-redes .lista-icons {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      column-gap: 2rem; }
+
+@media screen and (min-width: 324px) {
+  main div .img-index {
+    width: 100%; } }
+
+@media screen and (min-width: 1024px) {
+  .container-index {
+    box-shadow: 0 0 1px 0 #9a9a9a;
+    background-color: #E6D3C0;
+    margin-bottom: 10rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 50% 50%; }
+    .container-index .h1-index {
+      display: grid;
+      grid-row: span 1;
+      align-self: center;
+      padding: 0 20%; }
+    .container-index .img-index {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      justify-self: right;
+      align-self: center;
+      padding: 2rem 2rem; }
+    .container-index .btn-index {
+      width: 100%;
+      height: 10rem;
+      background-color: #E6D3C0;
+      border: none;
+      justify-self: center; }
+      .container-index .btn-index a {
+        font-size: 2rem;
+        background-color: #d7d8c5;
+        padding: 0.3rem 0.7rem;
+        border-radius: 5px;
+        border: 1.5px solid #9a9a9a;
+        box-shadow: 0 0 5px 0 #9a9a9a; } }
+
+main .container-acercade .section-naranja {
+  background-color: #E6D3C0;
+  padding: 0.7rem 0.7rem 0rem 0.7rem;
+  padding: 1rem 1rem 5rem 1rem; }
+
+main .container-acercade .section-amarillo {
+  background-color: #eddfd0;
+  padding: 1rem 1rem 0;
+  text-shadow: 0 0 1 solid #9a9a9a;
+  padding: 1rem 1rem 0;
+  margin: 0; }
+
+@media screen and (min-width: 1024px) {
+  main .container-acercade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-bottom: 15rem; }
+    main .container-acercade .h2-acercade {
+      letter-spacing: 0.1rem;
+      padding: 0.6rem 0;
+      margin: 0; }
+    main .container-acercade .padding-top {
+      padding-top: 2rem; }
+    main .container-acercade .section-uno {
+      grid-column: 1;
+      grid-row: 1; }
+    main .container-acercade .section-dos {
+      grid-column: 1;
+      grid-row: 3/5; }
+    main .container-acercade .section-tres {
+      grid-column: 1;
+      grid-row: 2; }
+    main .container-acercade .section-cuatro {
+      grid-column: 1/3;
+      grid-row: 5/7; }
+    main .container-acercade .section-cinco {
+      grid-column: 2;
+      grid-row: 3/4; }
+    main .container-acercade .section-seis {
+      grid-column: 2;
+      grid-row: 4; }
+    main .container-acercade .container-dos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem; }
+      main .container-acercade .container-dos .column-uno {
+        grid-column: 1; }
+      main .container-acercade .container-dos .column-dos {
+        grid-column: 2; }
+    main .container-acercade .img-acercade {
+      grid-column: 2;
+      grid-row: 1/3; } }
+
+main .team .container-nosotras {
+  display: flex;
+  margin-bottom: 15rem; }
+  main .team .container-nosotras .member {
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    background: #fff; }
+    main .team .container-nosotras .member .nosotras {
+      max-width: 70%;
+      border-radius: 50%;
+      margin: 0 0 30px 0; }
+    main .team .container-nosotras .member .h2-nosotras {
+      font-weight: 700;
+      margin-bottom: 2px;
+      font-size: 18px; }
+    main .team .container-nosotras .member .h3-nosotras {
+      font-style: italic;
+      display: block;
+      font-size: 13px; }
+    main .team .container-nosotras .member .descripcion-nosotras {
+      padding-top: 10px;
+      font-size: 14px;
+      font-style: italic;
+      color: #aaaaaa; }
+    main .team .container-nosotras .member .social {
+      margin-top: 15px; }
+      main .team .container-nosotras .member .social i {
+        font-size: 18px;
+        margin: 0 2px; }
+      main .team .container-nosotras .member .social .a-nosotras {
+        color: #919191;
+        transition: 0.3s; }
+        main .team .container-nosotras .member .social .a-nosotras:hover {
+          color: #e96b56; }

@@ -1,0 +1,156 @@
+@font-face {
+    font-family: dreaming;
+    src: url(../../fonts/dreaming-outloud-regular.otf);
+}
+@font-face {
+    font-family: candara;
+    src: url(../../fonts/candara.ttf);
+}
+@font-face {
+    font-family: candarabold;
+    src: url(../../fonts/candara-bold.ttf);
+}
+
+body {
+    background-color: $body;
+    color: $gris-oscuro;
+    font-family: candara;
+}
+
+img {
+    max-width: 100%;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    font-family: dreaming;
+    color: $gris-oscuro;
+}
+
+p {
+    font-size: 1.5rem;
+    text-shadow: 0 0 0px $gris-claro;
+ }
+
+span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.img-border {
+    border: 2px solid $gris-claro;
+}
+.box-shadow {
+    box-shadow: 0 0 5px 0 $gris-claro;
+}
+.border-radius {
+    border-radius: 5px;
+}
+
+
+main {
+    h1 {
+        font-family: Dreaming;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+        text-shadow: 1px 1px 1px $gris-claro;
+    }
+
+    h2 {
+        font-family: candarabold;
+        font-size: 1.7rem;
+    }
+    h3 {
+        font-family: candarabold;
+        font-size: 1.5rem;
+    }
+}
+
+header {
+    @include flex-column;
+    margin-bottom: 10rem;
+    border-bottom: 1px solid $gris-claro;
+    box-shadow: 0px 0px 4px 1px $gris-claro;
+    background-color: $bg-header;
+
+    .titulo-header {
+        font-size: 4rem;
+        text-align: center;
+        text-shadow: 1px 1px 0px $gris-claro;
+    }
+    .lista-header {
+        @include flex-row;
+        font-size: 4rem;
+        justify-content: center;
+        gap: 6rem;
+        margin: 0;
+        text-shadow: 0px 1px 1px $gris-claro;
+        text-transform: uppercase;
+    }
+}
+
+/* menu boot */
+.container-boot {
+    margin-bottom: 12rem;
+    font-family: Dreaming;
+    nav {
+        padding: 0;
+        .estilos-boot {
+            border-bottom: $gris-claro solid 0.5px;
+            box-shadow: 0px 0px 6px 1px $gris-claro;
+            background-color: $bg-header;
+            padding: 1rem 2rem 1rem 25%;
+            .bg-boot {
+                background-image: url(../../img/fondoflores1.jpg);
+                opacity: 20px;
+            }
+            .titulo-nande {
+                font-size: 2.5rem;
+                color: $gris-oscuro;
+                text-shadow: 1px 1px 0px $gris-claro;
+            }
+            .btn-boot {
+                border: none;
+                padding: 0;
+            }
+            div {
+                .color-boot {
+                    color: $gris-oscuro;
+                    font-size: 2.3rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 324px) {
+    header {
+        display: none;
+    }
+    main {
+        @include flex-column;
+        @include margin-mobile;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        @include margin-tablet;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        display: flex;
+    }
+    .container-boot {
+        display: none;
+    }
+}
+
+

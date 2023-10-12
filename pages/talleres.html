@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacio Ñandé</title>
+    <!-- link boot -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- link css -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body>
+    <header>
+        <div class="titulo-header">
+            <a href="../index.html">Espacio Ñandé</a>
+        </div>
+        <div>
+            <ul class="lista-header">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/acerca_de.html">Acerca De</a></li>
+                <li><a href="../pages/talleres.html">Talleres</a></li>
+                <li><a href="../pages/consultas.html">Consultas</a></li>
+                <li><a href="../pages/sobre_nosotras.html">Sobre Nosotras</a></li>
+            </ul>
+        </div>
+    </header>
+
+        <!-- menu boot -->
+    <div class="container-boot">    
+        <nav class="navbar fixed-top">
+            <div class="container-fluid estilos-boot">
+                <a class="navbar-brand titulo-nande" href="#">Espacio Ñandé</a>
+                <button class="btn-boot bg-boot" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <img src="img/icons/menu.png" alt="btn-open">
+                </button>
+
+                <div class="offcanvas offcanvas-end bg-boot" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title titulo-nande" id="offcanvasNavbarLabel">Espacio Ñandé</h5>
+                        <button class="btn-boot bg-boot boton-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                            <img class="img-boot" src="img/icons/cerrar-ventana.png" alt="btn-close">
+                        </button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 color-boot">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Acerca De</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Talleres</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Consultas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sobre Nosotras</a>
+                            </li>
+                        </ul>
+
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav> 
+    </div><!-- --- -->
+
+
+    <footer>
+        <div class="lista-contacto">
+            <p>Contactános!</p>
+            <ul>
+                <li> 
+                    <img class="img-contacto" src="../img/icons/email.png" alt="">
+                    espacionande@gmail.com
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-icons">
+            <img class="nande-icons" src="../img/icons/nande-icons.jpg" alt="icono-espacionande">
+            <p class="p-derechos">Todos los derechos reservados.</p>
+        </div>
+
+        <div class="lista-redes">
+            <p>Seguinos en nuestras redes!</p>
+            <ul class="lista-icons">
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61551786781271">
+                        <img class="icon" src="../img/icons/facebook.png" alt="icono-facebook" >
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/espacionande/">
+                        <img class="icon" src="../img/icons/instagram.png" alt="icono-instagram">
+                    </a>
+                </li>
+                <li >
+                    <a target="_blank" href="">
+                        <img class="icon" src="../img/icons/gorjeo.png" alt="icono-twitter">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
