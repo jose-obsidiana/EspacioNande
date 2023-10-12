@@ -140,11 +140,7 @@ footer {
   width: 100%;
   min-height: 18vh;
   color: #f7f0e6;
-  padding: 0 5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
+  padding: 0 5rem; }
   footer .lista-contacto, footer .lista-redes {
     font-size: 4rem;
     font-weight: bold; }
@@ -172,6 +168,40 @@ footer {
       flex-direction: row;
       width: 50%;
       column-gap: 2rem; }
+
+@media screen and (min-width: 324px) {
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 3rem;
+    justify-content: center;
+    align-items: center; }
+    footer .ocultar-mobile {
+      display: none; }
+    footer .lista-contacto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      footer .lista-contacto .lista-mail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+        column-gap: 0.3rem; }
+    footer .parrafo {
+      margin-bottom: 0.3rem; } }
+
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    footer .ocultar-mobile {
+      display: flex; }
+    footer .parrafo {
+      margin-bottom: 1rem; } }
 
 @media screen and (min-width: 324px) {
   main div .img-index {

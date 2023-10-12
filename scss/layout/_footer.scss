@@ -8,7 +8,7 @@ footer {
     min-height: 18vh;
     color: $bg-header;
     padding: 0 5rem;
-    @include flex-container (row, space-between, center);
+
 
     .lista-contacto, .lista-redes {
         font-size: 4rem;
@@ -44,7 +44,46 @@ footer {
                     }
                 }
             }
-
         }
     }
 }
+
+@media screen and (min-width: 324px) {
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem 3rem;
+        justify-content: center;
+        align-items: center;
+        .ocultar-mobile {
+            display: none;
+        }
+
+        .lista-contacto {
+            @include flex-container(column, center, center);
+            .lista-mail {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 1rem;
+                column-gap: 0.3rem;
+            }
+        }
+        .parrafo {
+            margin-bottom: 0.3rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        @include flex-container (row, space-between, center);
+            .ocultar-mobile {
+                display: flex;
+            }
+        .parrafo {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
