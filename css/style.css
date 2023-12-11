@@ -33,6 +33,12 @@ a {
   font-family: dreaming;
   color: #3C3D3C; }
 
+div {
+  font-size: 1.5rem; }
+
+label {
+  font-size: 1.5rem; }
+
 p {
   font-size: 1.5rem;
   text-shadow: 0 0 0px #9a9a9a; }
@@ -55,7 +61,8 @@ main h1 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 5rem;
-  text-shadow: 1px 1px 1px #9a9a9a; }
+  text-shadow: 1px 1px 1px #9a9a9a;
+  text-transform: uppercase; }
 
 main h2 {
   font-family: candarabold;
@@ -334,3 +341,10 @@ main .team .container-nosotras {
         transition: 0.3s; }
         main .team .container-nosotras .member .social .a-nosotras:hover {
           color: #e96b56; }
+
+main #container-form {
+  font-size: 5rem;
+  display: block; }
+
+main #formularioTurnos {
+  font-size: 3rem; }
