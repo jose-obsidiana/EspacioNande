@@ -49,19 +49,7 @@ const resultadoTurnos = document.getElementById('resultadoTurnos')
 
 
 
-// CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
-window.onload = function () {
-    let listaPacientes = localStorage.getItem("claveForm");
-    if (listaPacientes) {
-        pacientes = JSON.parse(listaPacientes)
-    }
 
-    let listaTurnos = localStorage.getItem('claveTurnos');
-    if (listaTurnos) {
-        turnosConfirmados = JSON.parse(listaTurnos)
-    }
-    console.log(turnosConfirmados)
-};
 
 
 
@@ -81,7 +69,6 @@ formularioTurnos.addEventListener('submit', function(event) {
     generarTurnos()
 })
 
-// EVENTO PARA CAPTURAR y ENVIAR EL TURNO SELECCIONADO
 
 
 // // FUNCION PARA REGISTRAR A UN NUEVO PACIENTE
@@ -107,18 +94,38 @@ function agregarNuevoPaciente() {
         }
 
         // // FUNCION PARA GENERAR TURNOS
-function generarTurnos() {
-    let dia = diaSeleccionado.value;
-    let horario = horarioSeleccionado.value;
+        function generarTurnos() {
+            let dia = diaSeleccionado.value;
+            let horario = horarioSeleccionado.value;
+        
+            if (dia && horario) {
+                let turnoElegido = new TurnosPacientes(dia, horario);
+        
+                turnosConfirmados.push(turnoElegido);
+                localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
+                resultadoTurnos.innerHTML = `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`;
+            }
+        }
 
-    if (dia && horario) {
-        let turnoElegido = new TurnosPacientes(dia, horario);
 
-        turnosConfirmados.push(turnoElegido);
-        localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
-        resultadoTurnos.innerHTML = `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`;
+// CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
+window.onload = function () {
+    let listaPacientes = localStorage.getItem('claveForm')
+    if (listaPacientes ) {
+        pacientes = JSON.parse(listaPacientes)
     }
-}
+
+    let listaTurnos = localStorage.getItem('claveTurnos')
+    if (listaTurnos ) {
+        turnosConfirmados = JSON.parse(listaTurnos)
+        console.log(turnosConfirmados)
+    }  
+};
+
+
+
+
+
 
 
 // GUARDAR DATOS DE FORMULARIO EN JSON
@@ -172,9 +179,9 @@ function guardarTurnos() {
 
 }
 
+console.log(pacientes)
 
-
-//     // BUSCAR PACIENTES REGISTRADOS
+    // BUSCAR PACIENTES REGISTRADOS
 //     function buscarPacientes () {
 //         let buscarPaciente = prompt('Ingrese apellido')
 //         let resultado = pacientes.find((x) => x.apellido.toUpperCase().includes(buscarPaciente.toUpperCase()))
