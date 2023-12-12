@@ -4,7 +4,7 @@
 
 
  // CONSTRUCTOR PARA PACIENTES
- const Persona = function (nombre, apellido, nacimiento, telefono, email){
+const Persona = function (nombre, apellido, nacimiento, telefono, email){
     this.nombre = nombre.toUpperCase()
     this.apellido = apellido.toUpperCase()
     this.nacimiento = nacimiento
@@ -49,7 +49,19 @@ const resultadoTurnos = document.getElementById('resultadoTurnos')
 
 
 
+// CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
+window.onload = function () {
+    let listaPacientes = localStorage.getItem("claveForm");
+    if (listaPacientes) {
+        pacientes = JSON.parse(listaPacientes)
+    }
 
+    let listaTurnos = localStorage.getItem('claveTurnos');
+    if (listaTurnos) {
+        turnosConfirmados = JSON.parse(listaTurnos)
+    }
+    console.log(turnosConfirmados)
+};
 
 
 
@@ -62,6 +74,12 @@ formulario.addEventListener('submit', function(event) {
     }
 )
 
+formularioTurnos.addEventListener('submit', function(event) {
+    event.preventDefault()
+    guardarTurnos()
+    cargarFormulario()
+    generarTurnos()
+})
 
 // EVENTO PARA CAPTURAR y ENVIAR EL TURNO SELECCIONADO
 
@@ -88,6 +106,20 @@ function agregarNuevoPaciente() {
             }
         }
 
+        // // FUNCION PARA GENERAR TURNOS
+function generarTurnos() {
+    let dia = diaSeleccionado.value;
+    let horario = horarioSeleccionado.value;
+
+    if (dia && horario) {
+        let turnoElegido = new TurnosPacientes(dia, horario);
+
+        turnosConfirmados.push(turnoElegido);
+        localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
+        resultadoTurnos.innerHTML = `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`;
+    }
+}
+
 
 // GUARDAR DATOS DE FORMULARIO EN JSON
 function guardarFormulario() {
@@ -104,18 +136,7 @@ function guardarFormulario() {
     console.log(resultadoForm)
 }
 
-// // GUARDAR DATOS DE TURNOS EN JSON
-function guardarTurnos() {
-    const datosTurnos = {
-        dia: diaSeleccionado.value,
-        horario: horarioSeleccionado.value
-    }
 
-    let resultadoTurnos = JSON.stringify(datosTurnos)
-    localStorage.setItem('claveTurnos', resultadoTurnos)
-
-
-}
 
 
 
@@ -139,45 +160,17 @@ function cargarFormulario() {
     }
 }
 
-
-// // FUNCION PARA GENERAR TURNOS
-function generarTurnos() {
-    let dia = diaSeleccionado.value;
-    let horario = horarioSeleccionado.value;
-
-    if (dia && horario) {
-        let turnoElegido = new TurnosPacientes(dia, horario);
-
-        turnosConfirmados.push(turnoElegido);
-        localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
-        resultadoTurnos.innerHTML = `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`;
+// // GUARDAR DATOS DE TURNOS EN JSON
+function guardarTurnos() {
+    const datosTurnos = {
+        dia: diaSeleccionado.value,
+        horario: horarioSeleccionado.value
     }
+
+    let resultadoTurnos = JSON.stringify(datosTurnos)
+    localStorage.setItem('claveTurnos', resultadoTurnos)
+
 }
-
-// CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
-window.onload = function () {
-    let listaPacientes = localStorage.getItem("claveForm");
-    if (listaPacientes) {
-        pacientes = JSON.parse(listaPacientes)
-    }
-
-    let listaTurnos = localStorage.getItem('claveTurnos');
-    if (listaTurnos) {
-        turnosConfirmados = JSON.parse(listaTurnos)
-    }
-    console.log(turnosConfirmados)
-};
-
-
-
-formularioTurnos.addEventListener('submit', function(event) {
-    event.preventDefault()
-    guardarTurnos()
-    cargarFormulario()
-    generarTurnos()
-})
-
-
 
 
 
