@@ -4,18 +4,19 @@
 
 
  // CONSTRUCTOR PARA PACIENTES
-const Persona = function (nombre, apellido, nacimiento, telefono, email){
+const Persona = function (nombre, apellido, dni, nacimiento, telefono, email){
     this.nombre = nombre.toUpperCase()
     this.apellido = apellido.toUpperCase()
+    this.dni = dni
     this.nacimiento = nacimiento
     this.telefono = telefono
     this.email = email.toLowerCase()
 }
 
-let persona1 = new Persona("camila", "borges", '1990-05-15', '3512269484', 'camila@gmail.com')
-let persona2 = new Persona("fernando", "ayala", '1970-10-18', '3519669484', 'fernando@gmail.com')
-let persona3 = new Persona("ailin", "morales", '1997-03-24', '3548264884', 'ailin@gmail.com')
-let persona4 = new Persona("rodrigo", "carazo", '1987-08-05', '3565269154', 'rodrigo@gmail.com')
+let persona1 = new Persona("camila", "borges", '37703994', '1990-05-15', '3512269484', 'camila@gmail.com')
+let persona2 = new Persona("fernando", "ayala", '37703994', '1970-10-18', '3519669484', 'fernando@gmail.com')
+let persona3 = new Persona("ailin", "morales", '37703994', '1997-03-24', '3548264884', 'ailin@gmail.com')
+let persona4 = new Persona("rodrigo", "carazo", '37703994', '1987-08-05', '3565269154', 'rodrigo@gmail.com')
 
 let pacientes = [persona1, persona2, persona3, persona4]
 
@@ -35,6 +36,7 @@ let turnosConfirmados = [turno1]
 const formulario = document.getElementById('container-form')
 const inputNombre = document.querySelector('#nombre_input')
 const inputApellido = document.querySelector('#apellido_input')
+const inputDni = document.querySelector('#dni_input')
 const inputNacimiento = document.querySelector('#nacimiento_input')
 const inputTelefono = document.querySelector('#telefono_input')
 const inputEmail = document.querySelector('#email_input')
@@ -75,23 +77,30 @@ formularioTurnos.addEventListener('submit', function(event) {
 function agregarNuevoPaciente() {
     let nombre = inputNombre.value
     let apellido = inputApellido.value
+    let dni = inputDni.value
     let nacimiento = inputNacimiento.value
     let telefono = inputTelefono.value
     let email = inputEmail.value
 
     if (nombre && apellido && nacimiento) {
-        let nuevoUsuario = new Persona(nombre, apellido, nacimiento, telefono, email)
+        let nuevoUsuario = new Persona(nombre, apellido, dni,  nacimiento, telefono, email)
         pacientes.push(nuevoUsuario);
         localStorage.setItem("claveForm", JSON.stringify(pacientes));
 
-        resultadoRegistro.innerHTML = `BIENVENIDO/A ${nombre.toUpperCase()}`
-        console.table(pacientes)
+        Swal.fire ({
+            title: `BIENVENIDO/A ${nombre.toUpperCase()} !`,
+            icon: "success"
+        })
 
+        console.table(pacientes)
         }
         else {
-            alert('Te faltaron datos')
-            }
+            Swal.fire({
+                title: 'Lo sentimos, sus datos no han podido ser registrados. Por favor completa el formulario.',
+                icon: "error"
+            });
         }
+    }
 
         // // FUNCION PARA GENERAR TURNOS
         function generarTurnos() {
@@ -103,8 +112,24 @@ function agregarNuevoPaciente() {
         
                 turnosConfirmados.push(turnoElegido);
                 localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
-                resultadoTurnos.innerHTML = `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`;
+                Swal.fire({
+                    title: `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`,
+                    icon: "success"
+                });
             }
+
+            else {
+                Swal.fire({
+                    title: 'Lo sentimos, su turno no ha podido ser confirmado. Por favor inténtelo de nuevo más tarde',
+                    icon: "error"
+                });
+            }
+
+            let listaTurnos = localStorage.getItem('claveTurnos')
+            if (listaTurnos ) {
+                turnosConfirmados = JSON.parse(listaTurnos)
+                console.log(turnosConfirmados)
+            }  
         }
 
 
@@ -114,18 +139,7 @@ window.onload = function () {
     if (listaPacientes ) {
         pacientes = JSON.parse(listaPacientes)
     }
-
-    let listaTurnos = localStorage.getItem('claveTurnos')
-    if (listaTurnos ) {
-        turnosConfirmados = JSON.parse(listaTurnos)
-        console.log(turnosConfirmados)
-    }  
 };
-
-
-
-
-
 
 
 // GUARDAR DATOS DE FORMULARIO EN JSON
@@ -133,6 +147,7 @@ function guardarFormulario() {
     const datosDelFormulario = {
         nombre: inputNombre.value,
         apellido: inputApellido.value,
+        dni: inputDni.value,
         nacimiento: inputNacimiento.value,
         telefono: inputTelefono.value,
         email: inputEmail.value
@@ -157,6 +172,7 @@ function cargarFormulario() {
         const datosDelFormulario = JSON.parse(datosJSON)
         inputNombre.value = datosDelFormulario.nombre
         inputApellido.value = datosDelFormulario.apellido
+        inputDni.value = datosDelFormulario.dni
         inputNacimiento.value = datosDelFormulario.nacimiento
         inputTelefono.value = datosDelFormulario.telefono
         inputEmail.value = datosDelFormulario.email
@@ -179,7 +195,6 @@ function guardarTurnos() {
 
 }
 
-console.log(pacientes)
 
     // BUSCAR PACIENTES REGISTRADOS
 //     function buscarPacientes () {

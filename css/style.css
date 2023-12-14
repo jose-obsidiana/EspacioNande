@@ -344,7 +344,9 @@ main .team .container-nosotras {
 
 main #container-form {
   font-size: 5rem;
-  display: block; }
+  display: block;
+  padding: 2rem;
+  margin-bottom: 4rem; }
 
 main #formularioTurnos {
   font-size: 3rem; }
