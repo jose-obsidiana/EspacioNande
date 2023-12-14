@@ -116,6 +116,7 @@ function agregarNuevoPaciente() {
                     title: `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`,
                     icon: "success"
                 });
+
             }
 
             else {
