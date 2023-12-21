@@ -1,6 +1,10 @@
+// IMPORTANTE: LAS FUNCIONES DE JAVASCRIPT ESTAN SINCRONIZADAS CON LA PAGINA DE "CONSULTAS"
+// Y LA PARTE DE FETCH SE ENCUENTRA EN LA PAGINA DE "TALLERES"
 
-// // SACAR TURNOS PARA CONSULTORIO DE PSICOMOTRICIDAD
 
+
+
+// SACAR TURNOS PARA CONSULTORIO DE PSICOMOTRICIDAD
 
  // CONSTRUCTOR PARA PACIENTES
 const Persona = function (nombre, apellido, dni, nacimiento, telefono, email){
@@ -29,7 +33,6 @@ let turno1 = new TurnosPacientes ('martes', '15:00')
 let turnosConfirmados = [turno1]
 
 
-
 // DOM
 const formulario = document.getElementById('container-form')
 const inputNombre = document.querySelector('#nombre_input')
@@ -49,12 +52,12 @@ const resultadoTurnos = document.getElementById('resultadoTurnos')
 
 
 // CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
-// window.onload = function () {
-
-
-// };
-
-
+window.onload = function () {
+    let listaPacientes = localStorage.getItem('claveForm')
+    if (listaPacientes) {
+    pacientes = JSON.parse(listaPacientes)
+    }
+};
 
 
 // EVENTO PARA PREVENIR EL ENVIO, ENVIAR Y GUARDAR EL FORMULARIO
@@ -70,11 +73,12 @@ formularioTurnos.addEventListener('submit', function(event) {
     event.preventDefault()
     guardarTurnos()
     cargarFormulario()
-    
     generarTurnos()
 })
 
+let dniPacienteRegistrado = "";
 let datosRegistrados = false;
+
 // // FUNCION PARA REGISTRAR A UN NUEVO PACIENTE
 function agregarNuevoPaciente() {
     let nombre = inputNombre.value
@@ -87,72 +91,58 @@ function agregarNuevoPaciente() {
     if (!pacientes.some( (paciente) => paciente.dni === dni)) {
         let nuevoUsuario = new Persona(nombre, apellido, dni, nacimiento, telefono, email)
         pacientes.push(nuevoUsuario);
+        dniPacienteRegistrado = nuevoUsuario.dni;
         localStorage.setItem("claveForm", JSON.stringify(pacientes));
         console.table(pacientes)
+        datosRegistrados = true;
 
         Swal.fire ({
             title: `BIENVENIDO/A ${nombre.toUpperCase()} !`,
             icon: "success"
         })
-
-    datosRegistrados = true;
     } else {
         Swal.fire({
-            title: 'El DNI ingresado ya existe en el sistema, por favor inicie sesión para poder ingresar',
+            title: 'El DNI ingresado ya existe en el sistema',
             icon: "error"
         });
     }
-
-    let listaPacientes = localStorage.getItem('claveForm')
-    if (listaPacientes) {
-    pacientes = JSON.parse(listaPacientes);
-    }
 }
 
-        // // FUNCION PARA GENERAR TURNOS
-        function generarTurnos() {
-            let dia = diaSeleccionado.value;
-            let horario = horarioSeleccionado.value;
-            let dni = inputDni.value;
+    // // FUNCION PARA GENERAR TURNOS
+    function generarTurnos() {
+        let dia = diaSeleccionado.value;
+        let horario = horarioSeleccionado.value;
 
-            if (datosRegistrados == true) {
-                let turnoElegido = new TurnosPacientes(dia, horario);
+        if (datosRegistrados) {
+            let turnoElegido = new TurnosPacientes(dia, horario);
+            let pacienteRegistrado = pacientes.find(paciente => paciente.dni === dniPacienteRegistrado);
 
-                turnosConfirmados.push(turnoElegido);
-                localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
-                Swal.fire({
-                    title: `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`,
-                    icon: "success"
-                });
-                console.log(turnosConfirmados)
-            }
+            let pacienteTurno = {
+                paciente: pacienteRegistrado,
+                turno: turnoElegido
+            };
 
-            else {
-                Swal.fire({
-                    title: 'Lo sentimos, su turno no ha podido ser confirmado. Por favor registre sus datos para poder continuar',
-                    icon: "error"
-                });
-            }
-
-            let listaTurnos = localStorage.getItem('claveTurnos')
-            if (listaTurnos ) {
-                turnosConfirmados = JSON.parse(listaTurnos)
-            }  
-
-
-        let pacienteTurno = pacientes.find(paciente => paciente.apellido === apellido);
-        
-        let pacienteConfirmado = {
-            paciente: datosRegistrados,
-            turno: turnoElegido
+            turnosConfirmados.push(pacienteTurno);
+            localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
+            Swal.fire({
+                title: `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`,
+                icon: "success"
+            });
+            console.log(pacienteTurno)
         }
-        console.log(pacienteConfirmado)
-    }
 
+        else {
+            Swal.fire({
+                title: 'Lo sentimos, su turno no ha podido ser confirmado. Por favor registre sus datos para poder continuar',
+                icon: "error"
+            });
+        }
 
-
-
-
+        let listaTurnos = localStorage.getItem('claveTurnos')
+        if (listaTurnos ) {
+            turnosConfirmados = JSON.parse(listaTurnos)
+        } 
+}
 
 
 // GUARDAR DATOS DE FORMULARIO EN JSON
@@ -171,15 +161,10 @@ function guardarFormulario() {
     console.log(resultadoForm)
 }
 
-
-
-
-
 // TRAER DATOS DE FORMULARIO Y PARSEARLO CON JSON A OBJETO
 function cargarFormulario() {
     const datosJSON = localStorage.getItem('claveForm')
     const datosJSON2 = localStorage.getItem('claveTurnos')
-
 
     if(datosJSON && datosJSON2) {
         const datosDelFormulario = JSON.parse(datosJSON)
@@ -205,17 +190,7 @@ function guardarTurnos() {
 
     let resultadoTurnos = JSON.stringify(datosTurnos)
     localStorage.setItem('claveTurnos', resultadoTurnos)
-
 }
 
 
-    // BUSCAR PACIENTES REGISTRADOS
-//     function buscarPacientes () {
-//         let buscarPaciente = prompt('Ingrese apellido')
-//         let resultado = pacientes.find((x) => x.apellido.toUpperCase().includes(buscarPaciente.toUpperCase()))
-//         console.log(resultado)
-
-//     }
-
-//     buscarPacientes()
 

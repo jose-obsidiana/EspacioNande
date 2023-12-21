@@ -27,6 +27,8 @@ img {
 ul {
   list-style-type: none;
   padding: 0; }
+  ul li {
+    font-size: 1.5rem; }
 
 a {
   text-decoration: none;
@@ -45,7 +47,8 @@ p {
 
 span {
   font-size: 1.4rem;
-  font-weight: bold; }
+  font-weight: bold;
+  text-shadow: none; }
 
 .img-border {
   border: 2px solid #9a9a9a; }
@@ -350,3 +353,9 @@ main #container-form {
 
 main #formularioTurnos {
   font-size: 3rem; }
+
+main #talleres-container .taller {
+  margin-bottom: 3rem; }
+
+main #talleres-container p {
+  font-size: 1.5rem; }

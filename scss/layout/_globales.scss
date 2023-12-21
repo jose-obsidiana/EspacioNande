@@ -23,6 +23,9 @@ img {
 ul {
     list-style-type: none;
     padding: 0;
+    li {
+        font-size: 1.5rem;
+    }
 }
 a {
     text-decoration: none;
@@ -47,6 +50,7 @@ p {
 span {
     font-size: 1.4rem;
     font-weight: bold;
+    text-shadow: none;
 }
 
 .img-border {
