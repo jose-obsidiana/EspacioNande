@@ -77,39 +77,39 @@
 <main>
     <h1>Turnos Para Consultorio</h1>
 
-
+    <div class="container-formularios">
         <div id="container-form" class="box-shadow">
             <h2 class="h2-contacto">Ingrese sus datos para Registrarse</h2>
         
             <form action="#" method="post" id="contact_form">
                 <div class="nombre">
                     <label for="nombre">Nombre: </label>
-                    <input type="text" placeholder="Nombre" name="nombre" id="nombre_input" required>
+                    <input type="text" placeholder="Nombre" name="nombre" id="nombre_input" class="input-form" required>
                 </div>
 
                 <div class="apellido">
                     <label for="apellido">Apellido: </label>
-                    <input type="text" placeholder="Apellido" name="apellido" id="apellido_input" required>
+                    <input type="text" placeholder="Apellido" name="apellido" id="apellido_input" class="input-form" required>
                 </div>
 
                 <div class="dni">
                     <label for="dni">DNI: </label>
-                    <input type="text" placeholder="DNI" name="apellido" id="dni_input" required>
+                    <input type="number" placeholder="DNI" name="apellido" id="dni_input" class="input-form" required>
                 </div>
 
                 <div class="nacimiento">
                     <label for="birthday">Fecha De Nacimiento:</label>
-                    <input type="date" placeholder="Fecha de Nacimiento" name="nacimiento" id="nacimiento_input" required>
+                    <input type="date" placeholder="Fecha de Nacimiento" name="nacimiento" id="nacimiento_input" class="input-form" required>
                 </div>
 
                 <div class="telefono">
                     <label for="phone">Teléfono: </label>
-                    <input type="text" placeholder="Número" name="telephone" id="telefono_input" required>
+                    <input type="number" placeholder="Número" name="telephone" id="telefono_input" class="input-form" required>
                 </div>
 
                 <div class="email">
                     <label for="email">E-mail: </label>
-                    <input type="email" placeholder="E-mail" name="email" id="email_input" required>
+                    <input type="email" placeholder="E-mail" name="email" id="email_input" class="input-form" required>
                 </div>
                 
                 <div class="submit">
@@ -118,15 +118,11 @@
             </form><!-- // End form -->
         </div><!-- // End #container -->
 
+        <form id="formularioTurnos" class="box-shadow">
+            <h3>Elija el día y horario que desea ser atendido/a</h3>
 
-
-
-        <h3>Elija el día y horario que desea ser atendido/a</h3>
-
-        <form id="formularioTurnos">
-
-            <label for="dia">Día: </label>
-            <select id="diaSemana" name="diaSemana">
+            <label for="dia">Día:</label>
+            <select id="diaSemana" name="diaSemana" class="input-form">
                 <option value="lunes">Lunes</option>
                 <option value="martes">Martes</option>
                 <option value="miercoles">Miércoles</option>
@@ -134,7 +130,7 @@
                 <option value="viernes">Viernes</option>
             </select>
             <label for="horario">Horario:</label>
-            <select id="horarioSemana" name="horarioSemana">
+            <select id="horarioSemana" name="horarioSemana" class="input-form">
                 <option value="9:00">9:00</option>
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
@@ -147,9 +143,8 @@
             <div class="submit">
                 <input type="submit" value="Confirmar" id="enviar_boton2" />
             </div>
-            <div id="resultadoTurnos"> </div>
-
         </form>
+    </div>
 
     </main>
 

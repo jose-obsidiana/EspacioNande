@@ -1,5 +1,5 @@
 // IMPORTANTE: LAS FUNCIONES DE JAVASCRIPT ESTAN SINCRONIZADAS CON LA PAGINA DE "CONSULTAS"
-// Y LA PARTE DE FETCH SE ENCUENTRA EN LA PAGINA DE "TALLERES"
+// Y LA PARTE DE FETCH SE ENCUENTRA EN EL LINK DE SCRIP2, SINCRONIZADO CON LA PAGINA DE "TALLERES"
 
 
 
@@ -53,11 +53,8 @@ const resultadoTurnos = document.getElementById('resultadoTurnos')
 
 // CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
 window.onload = function () {
-    let listaPacientes = localStorage.getItem('claveForm')
-    if (listaPacientes) {
-    pacientes = JSON.parse(listaPacientes)
-    }
-};
+    pacientes = JSON.parse( localStorage.getItem('claveForm') ) || []
+}
 
 
 // EVENTO PARA PREVENIR EL ENVIO, ENVIAR Y GUARDAR EL FORMULARIO
@@ -133,15 +130,12 @@ function agregarNuevoPaciente() {
 
         else {
             Swal.fire({
-                title: 'Lo sentimos, su turno no ha podido ser confirmado. Por favor registre sus datos para poder continuar',
+                title: 'Lo sentimos, su turno no ha podido ser confirmado. Por favor registre sus datos para poder continuar.',
                 icon: "error"
             });
         }
 
-        let listaTurnos = localStorage.getItem('claveTurnos')
-        if (listaTurnos ) {
-            turnosConfirmados = JSON.parse(listaTurnos)
-        } 
+    turnosConfirmados = JSON.parse(localStorage.getItem('claveTurnos')) || [];
 }
 
 
@@ -191,6 +185,3 @@ function guardarTurnos() {
     let resultadoTurnos = JSON.stringify(datosTurnos)
     localStorage.setItem('claveTurnos', resultadoTurnos)
 }
-
-
-

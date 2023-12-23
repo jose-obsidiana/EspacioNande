@@ -29,6 +29,8 @@ ul {
   padding: 0; }
   ul li {
     font-size: 1.5rem; }
+    ul li a {
+      font-size: 1.7rem; }
 
 a {
   text-decoration: none;
@@ -39,7 +41,16 @@ div {
   font-size: 1.5rem; }
 
 label {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.3px; }
+
+div input {
+  margin: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border: 1px solid #9a9a9a;
+  border-radius: 10px; }
 
 p {
   font-size: 1.5rem;
@@ -345,17 +356,37 @@ main .team .container-nosotras {
         main .team .container-nosotras .member .social .a-nosotras:hover {
           color: #e96b56; }
 
-main #container-form {
+main .container-formularios {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  main .container-formularios .input-form {
+    margin-bottom: 0.8rem;
+    margin-left: 0.5rem; }
+
+main #container-form, main #formularioTurnos {
   font-size: 5rem;
-  display: block;
   padding: 2rem;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  background-color: #f0f0f4;
+  border-radius: 10px;
+  width: 50%;
+  height: 50%; }
 
 main #formularioTurnos {
-  font-size: 3rem; }
+  font-size: 3rem;
+  margin-bottom: 15rem; }
+
+main #diaSemana, main #horarioSemana {
+  font-size: 1.7rem;
+  border-radius: 10px;
+  padding-right: 5%;
+  margin-right: 3rem; }
+  main #diaSemana option, main #horarioSemana option {
+    font-size: 1.7rem; }
 
 main #talleres-container .taller {
-  margin-bottom: 3rem; }
+  margin-bottom: 4rem; }
 
 main #talleres-container p {
   font-size: 1.5rem; }

@@ -1,6 +1,7 @@
+// PAGINA DE "TALLERES"
+
+
 // FETCH
-
-
 fetch( "../talleres.json")
 .then ((response) => response.json() )
 .then ( data => {
