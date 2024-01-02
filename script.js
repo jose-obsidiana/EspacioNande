@@ -52,6 +52,7 @@ const resultadoTurnos = document.getElementById('resultadoTurnos')
 // iniciar sesion
 const inputIniciarSesion = document.getElementById('iniciarsesion_input')
 const botonIniciarSesion = document.getElementById('iniciarSesion_boton')
+const turnoConfirmadoHTML = document.getElementById('turnoConfirmadoHTML')
 
 
 // CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
@@ -77,6 +78,7 @@ formularioTurnos.addEventListener('submit', function(event) {
 })
 
 let dniPacienteRegistrado = "";
+let turnoPacienteRegistrado = "";
 let datosRegistrados = false;
 let encontrarPaciente = false;
 
@@ -109,6 +111,8 @@ function agregarNuevoPaciente() {
     }
 }
 
+
+// INICIAR SESION CON DNI
 function iniciarSesion() {
     let ingresarDNI = inputIniciarSesion.value
     let pacienteEncontrado = (pacientes.find((paciente) => paciente.dni === ingresarDNI ))
@@ -116,11 +120,16 @@ function iniciarSesion() {
     if (ingresarDNI && pacienteEncontrado) {
         dniPacienteRegistrado = pacienteEncontrado.dni
         encontrarPaciente = true;
-        localStorage.setItem("claveForm", JSON.stringify(pacientes));
+        localStorage.setItem('claveTurnos', JSON.stringify(turnoPacienteRegistrado));
+        turnoPacienteRegistrado = JSON.parse(localStorage.getItem('claveTurnos'));
         Swal.fire ({
             title: `BIENVENIDO/A ${pacienteEncontrado.nombre.toUpperCase()} !`,
             icon: "success"
         })
+
+        if (turnoPacienteRegistrado) {
+            turnoConfirmadoHTML.innerHTML = `Usted tiene un turno confirmado para el día ${turnoPacienteRegistrado.turno.dia} a las ${turnoPacienteRegistrado.turno.horario}hs`
+        }
     } else {
         Swal.fire({
             title: 'El DNI ingresado no se encuentra en el sistema',
@@ -136,21 +145,10 @@ botonIniciarSesion.addEventListener('click', function(event) {
 });
 
 
-
-
-
-
-
-
-
-
-
-
     // // FUNCION PARA GENERAR TURNOS
     function generarTurnos() {
         let dia = diaSeleccionado.value;
-        let horario = horarioSeleccionado.value;
-
+        let horario = horarioSeleccionado.value
         if (datosRegistrados || encontrarPaciente) {
             let turnoElegido = new TurnosPacientes(dia, horario);
             let pacienteRegistrado = pacientes.find(paciente => paciente.dni === dniPacienteRegistrado);
@@ -167,6 +165,7 @@ botonIniciarSesion.addEventListener('click', function(event) {
                 icon: "success"
             });
             console.log(pacienteTurno)
+            turnoPacienteRegistrado = pacienteTurno
         }
 
         else {
@@ -175,7 +174,6 @@ botonIniciarSesion.addEventListener('click', function(event) {
                 icon: "error"
             });
         }
-
     turnosConfirmados = JSON.parse(localStorage.getItem('claveTurnos')) || [];
 }
 
