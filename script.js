@@ -49,11 +49,14 @@ const diaSeleccionado = document.getElementById('diaSemana');
 const horarioSeleccionado = document.getElementById('horarioSemana');
 const botonEnviar2 = document.getElementById('enviar_boton2')
 const resultadoTurnos = document.getElementById('resultadoTurnos')
+// iniciar sesion
+const inputIniciarSesion = document.getElementById('iniciarsesion_input')
+const botonIniciarSesion = document.getElementById('iniciarSesion_boton')
 
 
 // CARGO EL VALOR ALMACENADO EN LOCALSTORAGE AL CARGAR LA PAGINA
 window.onload = function () {
-    pacientes = JSON.parse( localStorage.getItem('claveForm') ) || []
+    pacientes = JSON.parse( localStorage.getItem('claveForm') ) || [];
 }
 
 
@@ -75,6 +78,7 @@ formularioTurnos.addEventListener('submit', function(event) {
 
 let dniPacienteRegistrado = "";
 let datosRegistrados = false;
+let encontrarPaciente = false;
 
 // // FUNCION PARA REGISTRAR A UN NUEVO PACIENTE
 function agregarNuevoPaciente() {
@@ -89,9 +93,9 @@ function agregarNuevoPaciente() {
         let nuevoUsuario = new Persona(nombre, apellido, dni, nacimiento, telefono, email)
         pacientes.push(nuevoUsuario);
         dniPacienteRegistrado = nuevoUsuario.dni;
-        localStorage.setItem("claveForm", JSON.stringify(pacientes));
         console.table(pacientes)
         datosRegistrados = true;
+        localStorage.setItem("claveForm", JSON.stringify(pacientes));
 
         Swal.fire ({
             title: `BIENVENIDO/A ${nombre.toUpperCase()} !`,
@@ -99,18 +103,55 @@ function agregarNuevoPaciente() {
         })
     } else {
         Swal.fire({
-            title: 'El DNI ingresado ya existe en el sistema',
+            title: 'El DNI ingresado ya existe en el sistema, por favor inicia sesión para continuar',
             icon: "error"
         });
     }
 }
+
+function iniciarSesion() {
+    let ingresarDNI = inputIniciarSesion.value
+    let pacienteEncontrado = (pacientes.find((paciente) => paciente.dni === ingresarDNI ))
+
+    if (ingresarDNI && pacienteEncontrado) {
+        dniPacienteRegistrado = pacienteEncontrado.dni
+        encontrarPaciente = true;
+        localStorage.setItem("claveForm", JSON.stringify(pacientes));
+        Swal.fire ({
+            title: `BIENVENIDO/A ${pacienteEncontrado.nombre.toUpperCase()} !`,
+            icon: "success"
+        })
+    } else {
+        Swal.fire({
+            title: 'El DNI ingresado no se encuentra en el sistema',
+            icon: "error"
+        });
+    }
+}
+
+
+botonIniciarSesion.addEventListener('click', function(event) {
+    event.preventDefault();
+    iniciarSesion();
+});
+
+
+
+
+
+
+
+
+
+
+
 
     // // FUNCION PARA GENERAR TURNOS
     function generarTurnos() {
         let dia = diaSeleccionado.value;
         let horario = horarioSeleccionado.value;
 
-        if (datosRegistrados) {
+        if (datosRegistrados || encontrarPaciente) {
             let turnoElegido = new TurnosPacientes(dia, horario);
             let pacienteRegistrado = pacientes.find(paciente => paciente.dni === dniPacienteRegistrado);
 
@@ -152,6 +193,7 @@ function guardarFormulario() {
 
     let resultadoForm = JSON.stringify(datosDelFormulario)
     localStorage.setItem('claveForm', resultadoForm)
+
     console.log(resultadoForm)
 }
 

@@ -8,13 +8,18 @@ main {
             margin-left: 0.5rem;
         }
     }
-    #container-form, #formularioTurnos {
+    #container-form, #formularioTurnos, #iniciarSesion {
         font-size: 5rem;
         padding: 2rem;
         margin-bottom: 4rem;
         background-color:#f0f0f4;
         border-radius: 10px;
-        @include width-height(50%, 50%)
+        @include width-height(50%, 50%);
+        #iniciarSesion_boton {
+            border-radius: 10px;
+            border: 1px solid $gris-claro;
+            padding:0 3px;
+        }
 
     }
     #formularioTurnos {
