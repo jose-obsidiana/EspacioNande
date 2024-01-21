@@ -17,7 +17,7 @@
   src: url(../../fonts/candara-bold.ttf); }
 
 body {
-  background-color: #f7f0e6;
+  background-color: #fcf7f0;
   color: #3C3D3C;
   font-family: candara; }
 
@@ -74,7 +74,7 @@ main h1 {
   font-family: dreaming;
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   text-shadow: 1px 1px 1px #9a9a9a;
   text-transform: uppercase; }
 
@@ -92,7 +92,7 @@ header {
   margin-bottom: 10rem;
   border-bottom: 1px solid #9a9a9a;
   box-shadow: 0px 0px 4px 1px #9a9a9a;
-  background-color: #f7f0e6; }
+  background-color: #fcf4eb; }
   header .titulo-header {
     font-size: 4rem;
     text-align: center;
@@ -116,7 +116,7 @@ header {
     .container-boot nav .estilos-boot {
       border-bottom: #9a9a9a solid 0.5px;
       box-shadow: 0px 0px 6px 1px #9a9a9a;
-      background-color: #f7f0e6;
+      background-color: #fcf4eb;
       padding: 1rem 2rem 1rem 25%; }
       .container-boot nav .estilos-boot .bg-boot {
         background-image: url(../../img/fondoflores1.jpg);
@@ -160,7 +160,7 @@ footer {
   margin: 0;
   width: 100%;
   min-height: 18vh;
-  color: #f7f0e6;
+  color: #fcf4eb;
   padding: 0 5rem; }
   footer .lista-contacto, footer .lista-redes {
     font-size: 4rem;
@@ -210,6 +210,10 @@ footer {
         align-items: center;
         padding-bottom: 1rem;
         column-gap: 0.3rem; }
+        footer .lista-contacto .lista-mail a {
+          font-family: candara;
+          color: #fcf7f0;
+          font-size: 1.5rem; }
     footer .parrafo {
       margin-bottom: 0.3rem; } }
 
@@ -357,12 +361,20 @@ main .team .container-nosotras {
           color: #e96b56; }
 
 main .container-formularios {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 12rem 15rem;
+  gap: 2rem;
+  margin-bottom: 15rem; }
   main .container-formularios .input-form {
     margin-bottom: 0.8rem;
     margin-left: 0.5rem; }
+  main .container-formularios #container-form {
+    grid-row: 1/ 3; }
+  main .container-formularios #iniciarSesion {
+    grid-column: 2/3; }
+  main .container-formularios #formularioTurnos {
+    grid-column: 2 /3; }
 
 main #container-form, main #formularioTurnos, main #iniciarSesion {
   font-size: 5rem;
@@ -370,12 +382,14 @@ main #container-form, main #formularioTurnos, main #iniciarSesion {
   margin-bottom: 4rem;
   background-color: #f0f0f4;
   border-radius: 10px;
-  width: 50%;
-  height: 50%; }
-  main #container-form #iniciarSesion_boton, main #formularioTurnos #iniciarSesion_boton, main #iniciarSesion #iniciarSesion_boton {
+  width: 100%;
+  height: 100%; }
+  main #container-form #iniciarSesion_boton, main #container-form #enviar_boton, main #container-form #enviar_boton2, main #formularioTurnos #iniciarSesion_boton, main #formularioTurnos #enviar_boton, main #formularioTurnos #enviar_boton2, main #iniciarSesion #iniciarSesion_boton, main #iniciarSesion #enviar_boton, main #iniciarSesion #enviar_boton2 {
     border-radius: 10px;
     border: 1px solid #9a9a9a;
-    padding: 0 3px; }
+    padding: 0 1rem;
+    font-size: 1.7rem;
+    box-shadow: 0 0 1px 0 #9a9a9a; }
 
 main #formularioTurnos {
   font-size: 3rem;

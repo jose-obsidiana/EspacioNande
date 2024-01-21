@@ -67,6 +67,11 @@ footer {
                 align-items: center;
                 padding-bottom: 1rem;
                 column-gap: 0.3rem;
+                a {
+                    font-family: candara;
+                    color: $body;
+                    font-size: 1.5rem;
+                }
             }
         }
         .parrafo {

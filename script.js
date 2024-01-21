@@ -120,21 +120,23 @@ function iniciarSesion() {
     if (ingresarDNI && pacienteEncontrado) {
         dniPacienteRegistrado = pacienteEncontrado.dni
         encontrarPaciente = true;
-        localStorage.setItem('claveTurnos', JSON.stringify(turnoPacienteRegistrado));
-        turnoPacienteRegistrado = JSON.parse(localStorage.getItem('claveTurnos'));
+        localStorage.setItem('pacienteTurnos', JSON.stringify(turnoPacienteRegistrado));
+        turnoPacienteRegistrado = JSON.parse(localStorage.getItem('pacienteTurnos'));
         Swal.fire ({
             title: `BIENVENIDO/A ${pacienteEncontrado.nombre.toUpperCase()} !`,
             icon: "success"
         })
-
-        if (turnoPacienteRegistrado) {
-            turnoConfirmadoHTML.innerHTML = `Usted tiene un turno confirmado para el día ${turnoPacienteRegistrado.turno.dia} a las ${turnoPacienteRegistrado.turno.horario}hs`
-        }
     } else {
         Swal.fire({
             title: 'El DNI ingresado no se encuentra en el sistema',
             icon: "error"
         });
+    }
+
+    if (turnoPacienteRegistrado) {
+        turnoConfirmadoHTML.innerHTML = `Usted tiene un turno confirmado para el día ${turnoPacienteRegistrado.turno.dia} a las ${turnoPacienteRegistrado.turno.horario}hs`
+    } else {
+        turnoConfirmadoHTML.innerHTML = `Aún no hay turnos confirmados`
     }
 }
 
@@ -159,7 +161,7 @@ botonIniciarSesion.addEventListener('click', function(event) {
             };
 
             turnosConfirmados.push(pacienteTurno);
-            localStorage.setItem('claveTurnos', JSON.stringify(turnosConfirmados));
+            localStorage.setItem('pacienteTurnos', JSON.stringify(turnosConfirmados));
             Swal.fire({
                 title: `Gracias por confirmar. Su turno es el día ${dia} a las ${horario}hs`,
                 icon: "success"
@@ -174,7 +176,7 @@ botonIniciarSesion.addEventListener('click', function(event) {
                 icon: "error"
             });
         }
-    turnosConfirmados = JSON.parse(localStorage.getItem('claveTurnos')) || [];
+    turnosConfirmados = JSON.parse(localStorage.getItem('pacienteTurnos')) || [];
 }
 
 
