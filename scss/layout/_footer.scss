@@ -39,7 +39,7 @@ footer {
                 a {
                     .icon {
                         &:hover {
-                            
+                            width: 93%;
                         }
                     }
                 }
@@ -71,14 +71,19 @@ footer {
                     font-family: candara;
                     color: $body;
                     font-size: 1.5rem;
+                    width: 84%;
+                    &:hover {
+                        color: $gris-claro;
+                    }
                 }
             }
-        }
-        .parrafo {
-            margin-bottom: 0.3rem;
-        }
+            .parrafo {
+                margin-bottom: 0.3rem;
+            }
+        }   
     }
 }
+
 
 @media screen and (min-width: 768px) {
     footer {
@@ -91,4 +96,3 @@ footer {
         }
     }
 }
-

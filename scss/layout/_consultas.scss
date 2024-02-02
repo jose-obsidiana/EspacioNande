@@ -1,4 +1,76 @@
 
+
+main {
+    .h2-contacto, .h3-contacto {
+        margin-bottom: 2rem;
+    }
+    .container-formularios {
+    #container-form, #formularioTurnos, #iniciarSesion {
+        font-size: 5rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        background-color:$violeta;
+        border-radius: 10px;
+        @include width-height(100%, 100%); 
+        #iniciarSesion_boton, #enviar_boton, #enviar_boton2 {
+            border-radius: 10px;
+            border: 1px solid $gris-claro;
+            padding:0 1rem;
+            font-size: 1.7rem;
+            box-shadow: 0 0 1px 0 $gris-claro;
+            margin-top: 2rem;
+            width: 100%;
+            &:hover {
+                background-color: $bg-header;
+            }
+        }
+
+        .ingresar-dni label {
+            display: block ;
+        }
+        .ingresar-dni input {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        form {
+            .nombre label, .apellido label, .dni label, .nacimiento label, .telefono label, .email label {
+                display: block;
+                margin: 0.7rem 0 0 2px ;
+            }
+            div {
+                input {
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+            // turnos
+        }
+    }
+
+    #formularioTurnos {
+        font-size: 3rem;
+        margin-bottom: 15rem;
+        .turnoDia label {
+            margin-bottom: 1rem;
+        }
+    }
+
+    #diaSemana, #horarioSemana {
+        font-size: 1.7rem;
+        border-radius: 10px;
+        padding-right: 30%;
+        margin-right: 3rem;
+        margin-left: 7px;
+        option {
+            font-size: 1.7rem;
+            }
+        }   
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
 main {
     .container-formularios {
         @include grid(50% 50%, 12rem 15rem);
@@ -18,38 +90,6 @@ main {
             grid-column: 2 /3;
         }
     }
-    #container-form, #formularioTurnos, #iniciarSesion {
-        font-size: 5rem;
-        padding: 2rem;
-        margin-bottom: 4rem;
-        background-color:#f0f0f4;
-        border-radius: 10px;
-        @include width-height(100%, 100%); 
-        #iniciarSesion_boton, #enviar_boton, #enviar_boton2 {
-            border-radius: 10px;
-            border: 1px solid $gris-claro;
-            padding:0 1rem;
-            font-size: 1.7rem;
-            box-shadow: 0 0 1px 0 $gris-claro;
-        }
-
-    }
-    #formularioTurnos {
-        font-size: 3rem;
-        margin-bottom: 15rem;
-    }
-
-    #diaSemana, #horarioSemana {
-        font-size: 1.7rem;
-        border-radius: 10px;
-        padding-right: 5%;
-        margin-right: 3rem;
-        option {
-            font-size: 1.7rem;
-        }
-    }   
 }
-
-
-
+}
 

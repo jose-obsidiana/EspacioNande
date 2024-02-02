@@ -19,11 +19,11 @@
 
         <div>
             <ul class="lista-header">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/acerca_de.html">Acerca De</a></li>
-                <li><a href="pages/talleres.html">Talleres</a></li>
-                <li><a href="pages/consultas.html">Consultas</a></li>
-                <li><a href="pages/sobre_nosotras.html">Sobre Nosotras</a></li>
+                <li><a class="nav" href="index.html">Inicio</a></li>
+                <li><a class="nav" href="pages/acerca_de.html">Acerca De</a></li>
+                <li><a class="nav" href="pages/talleres.html">Talleres</a></li>
+                <li><a class="nav" href="pages/consultas.html">Consultas</a></li>
+                <li><a class="nav" href="pages/sobre_nosotras.html">Sobre Nosotras</a></li>
             </ul>
         </div>
     </header>
@@ -34,11 +34,11 @@
             <div class="container-fluid estilos-boot">
                 <a class="navbar-brand titulo-nande" href="#">Espacio Ñandé</a>
                 <button class="btn-boot bg-boot" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <img src="img/icons/menu.png" alt="btn-open">
+                    <img class="img-menu" src="img/icons/menu.png" alt="btn-open">
                 </button>
 
                 <div class="offcanvas offcanvas-end bg-boot" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
+                    <div class="offcanvas-header header-boot">
                         <h5 class="offcanvas-title titulo-nande" id="offcanvasNavbarLabel">Espacio Ñandé</h5>
                         <button class="btn-boot bg-boot boton-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
                             <img class="img-boot" src="img/icons/cerrar-ventana.png" alt="btn-close">
@@ -48,25 +48,25 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 color-boot">
                             <li class="nav-item ">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Acerca De</a>
+                                <a class="nav-link" href="pages/acerca_de.html">Acerca De</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Talleres</a>
+                                <a class="nav-link" aria-current="page" href="pages/talleres.html">Talleres</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Consultas</a>
+                                <a class="nav-link" href="pages/consultas.html">Consultas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sobre Nosotras</a>
+                                <a class="nav-link" href="pages/sobre_nosotras.html">Sobre Nosotras</a>
                             </li>
                         </ul>
 
                         <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success boton-buscar" type="submit">Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
         </nav> 
     </div><!-- --- -->
 
-    <main class="container-index img-border">
+    <main class="container-index">
         <div  class="h1-index">
             <h1>Espacio dedicado a la salud, el arte y la educación desde la Psicomotricidad</h1>
         </div>
@@ -92,7 +92,7 @@
             <p class="parrafo">Contactános!</p>
             <ul>
                 <li class="lista-mail">
-                    <a href="espacionande@gmail.com" target="_blank">
+                    <a href="mailto:espacionande@gmail.com" target="_blank">
                     <img class="img-contacto" src="img/icons/email.png" alt="icono-mail">
                     espacionande@gmail.com</a>
                 </li>

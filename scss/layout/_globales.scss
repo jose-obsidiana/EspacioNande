@@ -28,6 +28,11 @@ ul {
         a {
             font-size: 1.7rem;
         }
+        .nav {
+            &:hover {
+                color: $gris-claro;
+            }
+        }
     }
 }
 a {
@@ -82,7 +87,7 @@ main {
         font-family: dreaming;
         font-size: 2.5rem;
         text-align: center;
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
         text-shadow: 1px 1px 1px $gris-claro;
         text-transform: uppercase;
     }
@@ -126,14 +131,36 @@ header {
     font-family: dreaming;
     nav {
         padding: 0;
+        .header-boot, .estilos-boot {
+
+
+            @include flex-container(row, space-around, center);
+            
+        }
         .estilos-boot {
             border-bottom: $gris-claro solid 0.5px;
             box-shadow: 0px 0px 6px 1px $gris-claro;
             background-color: $bg-header;
-            padding: 1rem 2rem 1rem 25%;
+            padding: 1rem 0;
             .bg-boot {
-                background-image: url(../../img/fondoflores1.jpg);
+                background-color: #F0F0F0;
                 opacity: 20px;
+                background-color: $bg-header;
+                height: 50%;
+            }
+            .img-menu {
+                width: 3rem;
+                &:hover {
+                    background-color: $gris-claro;
+                    border-radius: 20%;
+                }
+            }
+            .img-boot {
+                width: 2.5rem;
+                &:hover {
+                    background-color: $gris-claro;
+                    border-radius: 20%;
+                }
             }
             .titulo-nande {
                 font-size: 2.5rem;
@@ -147,8 +174,18 @@ header {
             div {
                 .color-boot {
                     color: $gris-oscuro;
-                    font-size: 2.3rem;
+                    font-size: 2.4rem;
                     font-weight: bold;
+                    padding-left: 4rem;
+                }
+                form {
+                    .boton-buscar {
+                        border: 1px solid $gris-claro;
+                        color: $gris-oscuro;
+                        &:hover {
+                            background-color: $violeta;
+                        }
+                    }
                 }
             }
         }
@@ -178,6 +215,15 @@ header {
     .container-boot {
         display: none;
     }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        h1 {
+            margin-bottom: 10rem;
+        }
+    }
+
 }
 
 
