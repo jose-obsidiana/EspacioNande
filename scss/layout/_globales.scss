@@ -1,20 +1,31 @@
-@font-face {
-    font-family: dreaming;
-    src: url(../../fonts/dreaming-outloud-regular.otf);
-}
-@font-face {
-    font-family: candara;
-    src: url(../../fonts/candara.ttf);
-}
-@font-face {
-    font-family: candarabold;
-    src: url(../../fonts/candara-bold.ttf);
-}
+// @font-face {
+//     font-family: dreaming;
+//     src: url(../../fonts/dreaming-outloud-regular.otf);
+// }
+// @font-face {
+//     font-family: candara;
+//     src: url(../../fonts/candara.ttf);
+// }
+// @font-face {
+//     font-family: candarabold;
+//     src: url(../../fonts/candara-bold.ttf);
+// }
+
+
+// font-family: 'Amatic SC', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Nunito Sans', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Shadows Into Light Two', cursive;
+
+
+
 
 body {
     background-color: $body;
     color: $gris-oscuro;
-    font-family: candara;
+    font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -37,8 +48,11 @@ ul {
 }
 a {
     text-decoration: none;
-    font-family: dreaming;
+    font-family: 'Amatic SC', sans-serif;
     color: $gris-oscuro;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 3rem;
 }
 
 div {
@@ -46,7 +60,7 @@ div {
 }
 
 label {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.3px;
 }
@@ -61,8 +75,11 @@ div {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-shadow: 0 0 0px $gris-claro;
+}
+strong {
+    font-size: 1.4rem;
 }
 
 span {
@@ -84,20 +101,22 @@ span {
 
 main {
     h1 {
-        font-family: dreaming;
-        font-size: 2.5rem;
+        font-family: 'Amatic SC', sans-serif;
+        font-size: 4rem;
         text-align: center;
         margin-bottom: 5rem;
         text-shadow: 1px 1px 1px $gris-claro;
-        text-transform: uppercase;
+        letter-spacing: 3px;
     }
 
     h2 {
-        font-family: candarabold;
-        font-size: 1.7rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 1.5rem;
     }
     h3 {
-        font-family: candarabold;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
         font-size: 1.5rem;
     }
 }
@@ -122,13 +141,19 @@ header {
         margin: 0;
         text-shadow: 0px 1px 1px $gris-claro;
         text-transform: uppercase;
+        .nav {
+            font-family: 'Amatic SC', sans-serif;
+            letter-spacing: 2px;
+            font-size: 2rem;
+        }
     }
 }
 
 /* menu boot */
 .container-boot {
     margin-bottom: 12rem;
-    font-family: dreaming;
+    font-family: 'Amatic SC', sans-serif;
+    font-weight: bold;
     nav {
         padding: 0;
         .header-boot, .estilos-boot {
@@ -165,7 +190,8 @@ header {
             .titulo-nande {
                 font-size: 2.5rem;
                 color: $gris-oscuro;
-                text-shadow: 1px 1px 0px $gris-claro;
+                text-shadow: 1px 0px 0px $gris-claro;
+                font-weight: bold;
             }
             .btn-boot {
                 border: none;
@@ -176,12 +202,13 @@ header {
                     color: $gris-oscuro;
                     font-size: 2.4rem;
                     font-weight: bold;
-                    padding-left: 4rem;
+                    padding-left: 4.5rem;
                 }
                 form {
                     .boton-buscar {
                         border: 1px solid $gris-claro;
                         color: $gris-oscuro;
+                        font-weight: bold;
                         &:hover {
                             background-color: $violeta;
                         }

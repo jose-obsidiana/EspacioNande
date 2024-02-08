@@ -3,6 +3,9 @@
 
 @media screen and (min-width: 324px) {
     main {
+        .h1-index {
+            font-size: 4rem;
+        }
         .img-index { 
             width: 100%;
             padding-bottom: 2rem;
@@ -21,13 +24,16 @@
         border: 2px solid $gris-claro;
 
         @include margin-desktop;
-        @include grid (35% 65%, 50% 50%);
+        @include grid (35% 65%, 65% 35%);
 
         .h1-index {
             display: grid;
             grid-row: span 1;
             align-self: center;
-            padding: 0 20%;
+            padding: 12%;
+            font-size: 3rem;
+            margin-bottom: 0;
+            font-size: 4rem;
         }
         .img-index {
             grid-column: 2;
@@ -37,19 +43,25 @@
             padding: 2rem 2rem;
         }
         .btn-index {
-            @include width-height (50%, 4rem);
+            @include width-height (60%, 4rem);
             border: none;
             display: flex;
             justify-self: center;
             justify-content: center;
             align-items: center;
             text-align: center; 
-            font-size: 2.9rem;
             background-color: $verde-claro;
-            padding: 0.3rem;
+            padding: 0.3rem 1rem;
             border-radius: 5px;
             border: 1.5px solid $gris-claro;
             box-shadow: 0 0 6px 0 $gris-claro;
+            width: auto;
+
+            .a-boton {
+                font-family: 'Shadows Into Light Two', cursive;
+                font-size: 1.5rem;
+                letter-spacing: 3px;
+            }
             &:hover {
                 background-color: $verde-oscuro;
             }

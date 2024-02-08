@@ -68,10 +68,11 @@ footer {
                 padding-bottom: 1rem;
                 column-gap: 0.3rem;
                 a {
-                    font-family: candara;
+                    font-family: 'Open Sans', sans-serif;
                     color: $body;
                     font-size: 1.5rem;
                     width: 84%;
+                    letter-spacing: 0;
                     &:hover {
                         color: $gris-claro;
                     }
