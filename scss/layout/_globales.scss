@@ -171,7 +171,7 @@ header {
                 background-color: #F0F0F0;
                 opacity: 20px;
                 background-color: $bg-header;
-                height: 50%;
+                height: 45%;
             }
             .img-menu {
                 width: 3rem;
@@ -181,7 +181,7 @@ header {
                 }
             }
             .img-boot {
-                width: 2.5rem;
+                width: 2.2rem;
                 &:hover {
                     background-color: $gris-claro;
                     border-radius: 20%;
@@ -200,9 +200,13 @@ header {
             div {
                 .color-boot {
                     color: $gris-oscuro;
-                    font-size: 2.4rem;
                     font-weight: bold;
-                    padding-left: 4.5rem;
+                    padding-left: 6rem;
+                    font-weight: bold;
+                    a {
+                        font-size: 2rem;
+                    }
+        
                 }
                 form {
                     .boton-buscar {

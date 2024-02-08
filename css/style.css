@@ -130,14 +130,14 @@ header {
         background-color: #F0F0F0;
         opacity: 20px;
         background-color: #fcf4eb;
-        height: 50%; }
+        height: 45%; }
       .container-boot nav .estilos-boot .img-menu {
         width: 3rem; }
         .container-boot nav .estilos-boot .img-menu:hover {
           background-color: #9a9a9a;
           border-radius: 20%; }
       .container-boot nav .estilos-boot .img-boot {
-        width: 2.5rem; }
+        width: 2.2rem; }
         .container-boot nav .estilos-boot .img-boot:hover {
           background-color: #9a9a9a;
           border-radius: 20%; }
@@ -151,9 +151,11 @@ header {
         padding: 0; }
       .container-boot nav .estilos-boot div .color-boot {
         color: #3C3D3C;
-        font-size: 2.4rem;
         font-weight: bold;
-        padding-left: 4.5rem; }
+        padding-left: 6rem;
+        font-weight: bold; }
+        .container-boot nav .estilos-boot div .color-boot a {
+          font-size: 2rem; }
       .container-boot nav .estilos-boot div form .boton-buscar {
         border: 1px solid #9a9a9a;
         color: #3C3D3C;
