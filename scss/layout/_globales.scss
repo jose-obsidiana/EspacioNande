@@ -171,7 +171,7 @@ header {
                 background-color: #F0F0F0;
                 opacity: 20px;
                 background-color: $bg-header;
-                height: 45%;
+                height: 50%;
             }
             .img-menu {
                 width: 3rem;
@@ -181,7 +181,7 @@ header {
                 }
             }
             .img-boot {
-                width: 2.2rem;
+                width: 60%;
                 &:hover {
                     background-color: $gris-claro;
                     border-radius: 20%;

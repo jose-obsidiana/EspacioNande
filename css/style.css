@@ -130,14 +130,14 @@ header {
         background-color: #F0F0F0;
         opacity: 20px;
         background-color: #fcf4eb;
-        height: 45%; }
+        height: 50%; }
       .container-boot nav .estilos-boot .img-menu {
         width: 3rem; }
         .container-boot nav .estilos-boot .img-menu:hover {
           background-color: #9a9a9a;
           border-radius: 20%; }
       .container-boot nav .estilos-boot .img-boot {
-        width: 2.2rem; }
+        width: 60%; }
         .container-boot nav .estilos-boot .img-boot:hover {
           background-color: #9a9a9a;
           border-radius: 20%; }
