@@ -16,9 +16,11 @@ main {
                 border-radius: 10px;
                 border: 1px solid $gris-claro;
                 font-size: 1.7rem;
-                box-shadow: 0 0 1px 0 $gris-claro;
+                box-shadow: 0 0 2px 0 $gris-claro;
                 margin-top: 2rem;
                 width: 100%;
+                color: $gris-oscuro;
+                background-color: #f1f1f1;
                 &:hover {
                     background-color: $gris-oscuro;
                     color: $bg-header;

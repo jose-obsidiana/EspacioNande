@@ -436,9 +436,11 @@ main .container-formularios #container-form, main .container-formularios #formul
     border-radius: 10px;
     border: 1px solid #9a9a9a;
     font-size: 1.7rem;
-    box-shadow: 0 0 1px 0 #9a9a9a;
+    box-shadow: 0 0 2px 0 #9a9a9a;
     margin-top: 2rem;
-    width: 100%; }
+    width: 100%;
+    color: #3C3D3C;
+    background-color: #f1f1f1; }
     main .container-formularios #container-form #iniciarSesion_boton:hover, main .container-formularios #container-form #enviar_boton:hover, main .container-formularios #container-form #enviar_boton2:hover, main .container-formularios #formularioTurnos #iniciarSesion_boton:hover, main .container-formularios #formularioTurnos #enviar_boton:hover, main .container-formularios #formularioTurnos #enviar_boton2:hover, main .container-formularios #iniciarSesion #iniciarSesion_boton:hover, main .container-formularios #iniciarSesion #enviar_boton:hover, main .container-formularios #iniciarSesion #enviar_boton2:hover {
       background-color: #3C3D3C;
       color: #fcf4eb; }
