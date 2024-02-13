@@ -518,6 +518,10 @@ main .container-formularios #diaSemana, main .container-formularios #horarioSema
       main .container-formularios #container-form .submit #enviar_boton2, main .container-formularios #formularioTurnos .submit #enviar_boton2, main .container-formularios #iniciarSesion .submit #enviar_boton2 {
         margin-top: 0; } }
 
+main .h2-talleres {
+  font-size: 1.2rem;
+  text-align: center; }
+
 main .gallery {
   display: block;
   max-width: 100%;
@@ -531,10 +535,10 @@ main .gallery {
     display: inline-block;
     transition: transform 0.3s ease; }
     main .gallery .photo:hover {
-      transition: all 0s;
-      transform: translateY(15px) scale(1.2) rotate(3deg);
+      transition: all 1s;
+      transform: translateY(15px) scale(1.1) rotate(3deg);
       animation-play-state: paused;
-      opacity: 0.5;
+      opacity: 0.7;
       z-index: 2;
       filter: grayscale(50%); }
       main .gallery .photo:hover figcaption {
@@ -573,9 +577,13 @@ main .gallery {
     transform: rotate3d(0, 0, 1, 3deg); }
   75% {
     transform: rotate3d(0, 0, 1, -3deg); } }
-  main .gallery .photo-1:hover .taller-1 {
+  main .gallery .photo-1:hover .taller {
     opacity: 1; }
-  main .gallery .taller-1 {
+  main .gallery .photo-2:hover .taller {
+    opacity: 1; }
+  main .gallery .photo-3:hover .taller {
+    opacity: 1; }
+  main .gallery .taller {
     top: 40%;
     left: 10%; }
   main .gallery .taller {
@@ -585,13 +593,18 @@ main .gallery {
     position: absolute;
     padding: 1rem;
     background-color: black;
-    box-shadow: 0px 15px 25px black;
+    box-shadow: 5px 15px 25px black;
     transform: translate(-6%, -50%); }
     main .gallery .taller ul li {
-      font-size: 1.4rem; }
+      font-size: 1.2rem; }
+      main .gallery .taller ul li strong {
+        font-size: 1.2rem; }
 
 @media screen and (min-width: 1024px) {
   main .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem; } }
+    gap: 1rem;
+    margin-bottom: 15rem; }
+    main .gallery .taller ul li {
+      font-size: 1.5rem; } }

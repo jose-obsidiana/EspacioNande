@@ -10,13 +10,16 @@
 
 
 main {
+    .h2-talleres {
+        font-size: 1.2rem;
+        text-align: center;
+    }
     .gallery {
         display: block;
         max-width: 100%;
         padding: 10px;
         background-color: white;
         background-color: $body;
-		// hover
 		position: relative;
 
         .photo {
@@ -24,12 +27,11 @@ main {
             position: relative;
             display: inline-block;
 			transition: transform 0.3s ease;
-
             &:hover {
-                transition: all 0s;
-                transform: translateY(15px) scale(1.2) rotate(3deg); 
+                transition: all 1s;
+                transform: translateY(15px) scale(1.1) rotate(3deg); 
                 animation-play-state: paused;
-				opacity: 0.5;
+				opacity: 0.7;
 				z-index: 2;
 				filter: grayscale(50%);
                 & figcaption {
@@ -82,12 +84,17 @@ main {
             }
         }
 
-
-		.photo-1:hover .taller-1 {
+        //hover 
+		.photo-1:hover .taller {
 			opacity: 1;
 		}
-
-		.taller-1 {
+        .photo-2:hover .taller {
+			opacity: 1;
+		}
+        .photo-3:hover .taller {
+			opacity: 1;
+		}
+		.taller {
 			top: 40%;
 			left: 10%;
 			}
@@ -99,10 +106,13 @@ main {
 				position: absolute;
                 padding: 1rem;
 				background-color: black;
-				box-shadow: 0px 15px 25px black;
+				box-shadow: 5px 15px 25px black;
 				transform: translate(-6%, -50%);
 				ul li {
-					font-size: 1.4rem;
+					font-size: 1.2rem;
+                    strong {
+                        font-size: 1.2rem;
+                    }
 				}
             }   
     }
@@ -117,6 +127,14 @@ main {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1rem;
+            margin-bottom: 15rem;
+
+
+            .taller {
+                ul li {
+					font-size: 1.5rem;
+				}
+            }   
 		}
 	}
 }
