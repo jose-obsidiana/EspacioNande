@@ -440,7 +440,8 @@ main .container-formularios #container-form, main .container-formularios #formul
     margin-top: 2rem;
     width: 100%;
     color: #3C3D3C;
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    font-weight: 400; }
     main .container-formularios #container-form #iniciarSesion_boton:hover, main .container-formularios #container-form #enviar_boton:hover, main .container-formularios #container-form #enviar_boton2:hover, main .container-formularios #formularioTurnos #iniciarSesion_boton:hover, main .container-formularios #formularioTurnos #enviar_boton:hover, main .container-formularios #formularioTurnos #enviar_boton2:hover, main .container-formularios #iniciarSesion #iniciarSesion_boton:hover, main .container-formularios #iniciarSesion #enviar_boton:hover, main .container-formularios #iniciarSesion #enviar_boton2:hover {
       background-color: #3C3D3C;
       color: #fcf4eb; }
@@ -603,6 +604,8 @@ main .gallery {
         font-size: 1.2rem; }
 
 @media screen and (min-width: 1024px) {
+  main .h2-talleres {
+    display: none; }
   main .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
