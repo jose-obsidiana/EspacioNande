@@ -31,14 +31,18 @@ body {
 img {
     max-width: 100%;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
+
     li {
         font-size: 1.5rem;
+
         a {
             font-size: 1.7rem;
         }
+
         .nav {
             &:hover {
                 color: $gris-claro;
@@ -46,6 +50,7 @@ ul {
         }
     }
 }
+
 a {
     text-decoration: none;
     font-family: 'Amatic SC', sans-serif;
@@ -64,6 +69,7 @@ label {
     font-weight: bold;
     letter-spacing: 0.3px;
 }
+
 div {
     input {
         margin: 0.2rem;
@@ -78,6 +84,7 @@ p {
     font-size: 1.4rem;
     text-shadow: 0 0 0px $gris-claro;
 }
+
 strong {
     font-size: 1.4rem;
 }
@@ -91,9 +98,11 @@ span {
 .img-border {
     border: 2px solid $gris-claro;
 }
+
 .box-shadow {
     box-shadow: 0 0 5px 0 $gris-claro;
 }
+
 .border-radius {
     border-radius: 5px;
 }
@@ -102,7 +111,7 @@ span {
 main {
     h1 {
         font-family: 'Amatic SC', sans-serif;
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
         margin-bottom: 5rem;
         text-shadow: 1px 1px 1px $gris-claro;
@@ -114,6 +123,7 @@ main {
         font-weight: bold;
         font-size: 1.5rem;
     }
+
     h3 {
         font-family: 'Open Sans', sans-serif;
         font-weight: bold;
@@ -132,13 +142,16 @@ header {
         text-align: center;
         text-shadow: 1px 1px 0px $gris-claro;
         margin-top: 1rem;
+
         a {
             font-size: 3.6rem;
+
             &:hover {
                 color: $gris-claro;
             }
         }
     }
+
     .lista-header {
         @include flex-row;
         font-size: 4rem;
@@ -148,6 +161,7 @@ header {
         text-shadow: 0px 1px 1px $gris-claro;
         text-transform: uppercase;
         padding: 1rem 0;
+
         .nav {
             font-family: 'Amatic SC', sans-serif;
             letter-spacing: 2px;
@@ -161,68 +175,84 @@ header {
     margin-bottom: 12rem;
     font-family: 'Amatic SC', sans-serif;
     font-weight: bold;
+
     nav {
         padding: 0;
-        .header-boot, .estilos-boot {
+
+        .header-boot,
+        .estilos-boot {
 
 
             @include flex-container(row, space-around, center);
-            
+
         }
+
         .estilos-boot {
             border-bottom: $gris-claro solid 0.5px;
             box-shadow: 0px 0px 6px 1px $gris-claro;
             background-color: $bg-header;
             padding: 1rem 0;
+
             .bg-boot {
                 background-color: #F0F0F0;
                 opacity: 20px;
                 background-color: $bg-header;
                 height: 50%;
             }
+
             .img-menu {
                 width: 3rem;
+
                 &:hover {
                     background-color: $gris-claro;
                     border-radius: 20%;
                 }
             }
+
             .img-boot {
                 width: 60%;
+
                 &:hover {
                     background-color: $gris-claro;
                     border-radius: 20%;
                 }
             }
+
             .titulo-nande {
                 font-size: 2.5rem;
                 color: $gris-oscuro;
                 text-shadow: 1px 0px 0px $gris-claro;
                 font-weight: bold;
             }
+
             .btn-boot {
                 border: none;
                 padding: 0;
             }
+
             .boton-close {
                 height: auto;
             }
+
             div {
                 .color-boot {
                     color: $gris-oscuro;
                     font-weight: bold;
                     padding-left: 6rem;
                     font-weight: bold;
+
                     a {
                         font-size: 2rem;
                     }
-        
+
                 }
+
                 form {
                     .boton-buscar {
                         border: 1px solid $gris-claro;
                         color: $gris-oscuro;
                         font-weight: bold;
+
                         &:hover {
                             background-color: $violeta;
                         }
@@ -237,6 +267,7 @@ header {
     header {
         display: none;
     }
+
     main {
         @include flex-column;
         @include margin-mobile;
@@ -253,26 +284,21 @@ header {
     header {
         display: flex;
     }
+
     .container-boot {
         display: none;
     }
-}
 
-@media screen and (min-width: 1024px) {
-        li {
-            font-size: 0.2rem;
-        }   
-
-
-
+    li {
+        font-size: 0.2rem;
+    }
 
     main {
         h1 {
             margin-bottom: 10rem;
+            font-family: 'Amatic SC', sans-serif;
+            font-size: 4rem;
         }
 
     }
-
 }
-
-

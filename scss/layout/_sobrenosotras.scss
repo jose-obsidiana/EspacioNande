@@ -1,51 +1,106 @@
-
 main {
-.team {
-    .container-nosotras {
-        display: flex;
-        margin-bottom: 15rem;
-        .member {
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
-            padding: 30px 20px;
-            background: #fff;
-            .nosotras {
-                max-width: 70%;
-                border-radius: 50%;
-                margin: 0 0 30px 0;
-            }
-            .h2-nosotras {
-                font-weight: 700;
-                margin-bottom: 2px;
-                font-size: 18px;
-            }
-            .h3-nosotras {
-                font-style: italic;
-                display: block;
-                font-size: 13px;
-            }
-            .descripcion-nosotras {
-            padding-top: 10px;
-            font-size: 14px;
-            font-style: italic;
-            color: #aaaaaa;
-            }
-            .social {
-            margin-top: 15px;
-            i {
-                font-size: 18px;
-                margin: 0 2px;
+    .team {
+        .container-nosotras {
+            .member {
+                text-align: center;
+                margin-bottom: 20px;
+                box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+                padding: 30px 20px;
+                background: #fff;
+
+                .nosotras {
+                    max-width: 60%;
+                    border-radius: 50%;
+                    margin: 0 0 30px 0;
                 }
-            .a-nosotras {
-                color: #919191;
-                transition: 0.3s;
-                &:hover {
-                    color: #e96b56;
+
+                .h2-nosotras {
+                    font-weight: 700;
+                    margin-bottom: 2px;
+                    font-size: 1.5rem;
+                }
+
+                .h3-nosotras {
+                    font-style: italic;
+                    display: block;
+                    font-size: 13px;
+                }
+
+                .descripcion-nosotras {
+                    padding-top: 2.3rem;
+                    font-style: italic;
+                    color: #757575;
+                    font-size: 1.3rem;
+                }
+
+                .social {
+                    margin-top: 15px;
+
+                    i {
+                        font-size: 18px;
+                        margin: 0 2px;
+                    }
+
+                    .a-nosotras {
+                        color: #919191;
+                        transition: 0.3s;
+
+                        &:hover {
+                            color: #e96b56;
+                        }
                     }
                 }
             }
         }
     }
 }
+
+@media screen and (min-width: 1024px) {
+    main {
+        .team {
+            .container-nosotras {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                margin-bottom: 15rem;
+                column-gap: 4rem;
+
+                .luci-card {
+                    height: 90%;
+                }
+
+                .mise-card {
+                    height: 90%;
+                }
+
+                .luci {
+                    grid-column: 2/3;
+                }
+
+                .member {
+                    .descripcion-nosotras {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .h2-nosotras {
+                    font-weight: 700;
+                    margin-bottom: 2px;
+                    font-size: 18px;
+                }
+
+
+            }
+
+
+
+
+            .nosotras {
+                width: 50%;
+            }
+
+        }
+
+    }
+
 }
