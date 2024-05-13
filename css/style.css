@@ -348,6 +348,12 @@ main .container-acercade .section-amarillo {
   padding: 1rem 1rem 0;
   margin: 0; }
 
+main .container-acercade section .margin {
+  margin-top: 1rem; }
+
+main .container-acercade .ocultar-mobile {
+  display: none; }
+
 @media screen and (min-width: 1024px) {
   main .container-acercade {
     display: grid;
@@ -356,6 +362,10 @@ main .container-acercade .section-amarillo {
     column-gap: 2rem;
     row-gap: 2rem;
     margin-bottom: 15rem; }
+    main .container-acercade section .margin {
+      margin-top: 0; }
+    main .container-acercade .ocultar-mobile {
+      display: flex; }
     main .container-acercade .h2-acercade {
       letter-spacing: 0.1rem;
       padding: 0.6rem 0;
