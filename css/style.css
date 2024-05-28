@@ -48,7 +48,8 @@ div input {
 
 p {
   font-size: 1.4rem;
-  text-shadow: 0 0 0px #9a9a9a; }
+  text-shadow: 0 0 0px #9a9a9a;
+  text-align: justify; }
 
 strong {
   font-size: 1.4rem; }
